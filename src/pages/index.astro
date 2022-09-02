@@ -1,0 +1,139 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<style is:global>
+  :root {
+    --color-text: #35322e;
+    --color-bg: #fafbfc;
+  }
+
+  html {
+    background-color: var(--color-bg);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+  }
+  body {
+    display: flex;
+    justify-content: center;
+    color: var(--color-text);
+    height: 100vh;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+</style>
+<style>
+  main {
+    max-width: 100ch;
+    width: 100%;
+    margin-inline: auto;
+    text-align: center;
+    margin-top: 100px;
+  }
+  #logo {
+    font-size: clamp(8rem, 10vmax, 10rem);
+  }
+  h1 {
+    font-size: clamp(2rem, 6vmax, 6rem);
+    font-weight: 600;
+    margin: 0;
+  }
+  p {
+    font-size: clamp(1rem, 1.6vmax, 6rem);
+  }
+  search-bar {
+    font-size: clamp(1rem, 1.6vmax, 6rem);
+    min-width: fit-content;
+    padding: 20px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.412);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 60px;
+    box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.057);
+  }
+
+  input {
+    outline: none;
+    border: none;
+    font-size: clamp(1rem, 2vmax, 6rem);
+    width: 100%;
+    color: var(--color-text);
+    background: transparent;
+  }
+  input::placeholder {
+    color: var(--color-text);
+  }
+
+  button {
+    border: none;
+    font-size: clamp(2rem, 2vmax, 6rem);
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 20px;
+  }
+</style>
+
+<Layout title="OG inspector.">
+  <main>
+    <section class="container">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        viewBox="0 0 24 19"
+        fill="none"
+        id="logo"
+      >
+        <path
+          d="M6.5 1.5C8.22391 1.5 9.87721 2.18482 11.0962 3.40381C12.3152 4.62279 13 6.27609 13 8C13 9.61 12.41 11.09 11.44 12.23L11.71 12.5H12.5L17.5 17.5L16 19L11 14V13.21L10.73 12.94C9.59 13.91 8.11 14.5 6.5 14.5C4.77609 14.5 3.12279 13.8152 1.90381 12.5962C0.684819 11.3772 0 9.72391 0 8C0 6.27609 0.684819 4.62279 1.90381 3.40381C3.12279 2.18482 4.77609 1.5 6.5 1.5M6.5 3.5C4 3.5 2 5.5 2 8C2 10.5 4 12.5 6.5 12.5C9 12.5 11 10.5 11 8C11 5.5 9 3.5 6.5 3.5Z"
+          fill="currentColor"></path>
+        <path
+          d="M21.5752 12.7964C21.0218 13.2668 20.4048 13.6292 19.7241 13.8838C19.0435 14.1328 18.3351 14.2573 17.5991 14.2573C17.0347 14.2573 16.4896 14.1826 15.9639 14.0332C15.4437 13.8893 14.9567 13.6846 14.5029 13.4189C14.0492 13.1478 13.6341 12.8268 13.2578 12.4561C12.8815 12.0798 12.5605 11.6647 12.2949 11.2109C12.0293 10.7516 11.8218 10.2591 11.6724 9.7334C11.5285 9.20768 11.4565 8.6626 11.4565 8.09814C11.4565 7.53369 11.5285 6.99137 11.6724 6.47119C11.8218 5.95101 12.0293 5.46403 12.2949 5.01025C12.5605 4.55094 12.8815 4.1359 13.2578 3.76514C13.6341 3.38883 14.0492 3.06787 14.5029 2.80225C14.9567 2.53662 15.4437 2.33187 15.9639 2.18799C16.4896 2.03857 17.0347 1.96387 17.5991 1.96387C18.3351 1.96387 19.0435 2.09115 19.7241 2.3457C20.4048 2.59473 21.0218 2.95443 21.5752 3.4248L20.3301 5.5C19.9704 5.13477 19.5553 4.84977 19.085 4.64502C18.6146 4.43473 18.1193 4.32959 17.5991 4.32959C17.0789 4.32959 16.5892 4.4292 16.1299 4.62842C15.6761 4.82764 15.2777 5.0988 14.9346 5.44189C14.5915 5.77946 14.3203 6.1779 14.1211 6.63721C13.9219 7.09098 13.8223 7.57796 13.8223 8.09814C13.8223 8.62386 13.9219 9.11637 14.1211 9.57568C14.3203 10.035 14.5915 10.4362 14.9346 10.7793C15.2777 11.1224 15.6761 11.3936 16.1299 11.5928C16.5892 11.792 17.0789 11.8916 17.5991 11.8916C17.8979 11.8916 18.1885 11.8556 18.4707 11.7837C18.7529 11.7118 19.0213 11.6121 19.2759 11.4849V8.09814H21.5752V12.7964Z"
+          fill="currentColor"></path>
+      </svg>
+      <h1>OG Inspector</h1>
+      <p>recopila información OpenGraph de alguna página</p>
+      <form id="form">
+        <search-bar>
+          <input
+            autocomplete="off"
+            type="url"
+            name="url"
+            id="url"
+            placeholder="Introduce una URL..."
+          />
+          <button type="submit">
+            <svg
+              width="1em"
+              height="1em"
+              viewBox="0 0 90 90"
+              xmlns="http://www.w3.org/2000/svg"
+              ><path
+                d="M89.32 86.5L64.25 61.4C77.2 47 76.75 24.72 62.87 10.87 55.93 3.92 46.7.1 36.87.1s-19.06 3.82-26 10.77C3.92 17.8.1 27.05.1 36.87s3.82 19.06 10.77 26c6.94 6.95 16.18 10.77 26 10.77 9.15 0 17.8-3.32 24.55-9.4l25.08 25.1c.38.4.9.57 1.4.57.52 0 1.03-.2 1.42-.56.78-.78.78-2.05 0-2.83zM36.87 69.63c-8.75 0-16.98-3.4-23.17-9.6-6.2-6.2-9.6-14.42-9.6-23.17 0-8.75 3.4-16.98 9.6-23.17 6.2-6.2 14.42-9.6 23.17-9.6 8.75 0 16.98 3.4 23.18 9.6 12.77 12.75 12.77 33.55 0 46.33-6.2 6.2-14.43 9.6-23.18 9.6z"
+              ></path>
+            </svg>
+          </button>
+        </search-bar>
+      </form>
+    </section>
+  </main>
+</Layout>
+
+<script>
+  const form = document.querySelector("#form");
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target as HTMLFormElement);
+    console.log(formData.get("url"));
+  });
+</script>
