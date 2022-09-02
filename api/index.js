@@ -5,7 +5,7 @@ const cors = require("cors");
 app.use(json());
 app.use(cors());
 
-app.get("/api", (req, res) => {
+app.post("/api", (req, res) => {
   ogs({
     url: req.body?.url,
   })
